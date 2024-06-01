@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-/usr/sbin/php-fpm7.4 -R
+/usr/sbin/php-fpm8.2 -R
 chmod 777 /etc/nginx/ip_white.conf
-chmod 777 /run/php/php7.4-fpm.sock
+chmod 777 /run/php/php8.2-fpm.sock
 
 
 default_config="/home/mtproxy/mtp_config.example"
