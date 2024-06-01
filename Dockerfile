@@ -22,10 +22,10 @@ RUN set -ex \
 # build mtproxy and install php
 RUN set -ex \
     && apt-get update \
-    && apt-get install -y --no-install-recommends git wget curl build-essential libssl-dev zlib1g-dev iproute2 php7.4-fpm vim-common net-tools ntpdate procps \
+    && apt-get install -y --no-install-recommends git wget curl build-essential libssl-dev zlib1g-dev iproute2 php8.2-fpm vim-common net-tools ntpdate procps \
     && bash mtproxy.sh build \
-    && sed -i 's/^user\s*=[^\r]\+/user = root/' /etc/php/7.4/fpm/pool.d/www.conf \
-    && sed -i 's/^group\s*=[^\r]\+/group = root/' /etc/php/7.4/fpm/pool.d/www.conf \
+    && sed -i 's/^user\s*=[^\r]\+/user = root/' /etc/php/8.2/fpm/pool.d/www.conf \
+    && sed -i 's/^group\s*=[^\r]\+/group = root/' /etc/php/8.2/fpm/pool.d/www.conf \
     && rm -rf $WORKDIR/MTProxy \
     && rm -rf ~/go \
     && mkdir /run/php -p && mkdir $WORKDIR/pid \
